@@ -82,6 +82,9 @@ public:
 
     void OnFirstLogin(Player* player)
     {
+        // DKs don't get anything
+        if (player->getClass() == CLASS_DEATH_KNIGHT) return;
+    
         // If enabled..
         if (sConfigMgr->GetBoolDefault("CustomLogin.Enable", true))
         {
